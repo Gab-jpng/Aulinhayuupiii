@@ -74,5 +74,27 @@ if (command === "remove") {
   }
 }
 
-console.error("Comando desconhecido. Use 'add', 'list', 'update' ou 'remove'.");
+if (command === "help") {
+  console.log(`
+🗒️  TODO CLI - Comandos disponíveis:
+
+  add <item>        Adiciona um novo item à lista
+                    Ex: node cli.js add "Comprar leite"
+
+  list              Lista todos os itens
+                    Ex: node cli.js list
+
+  update <índice> <novo-item>    Atualiza um item existente
+                    Ex: node cli.js update 0 "Comprar leite e pão"
+
+  remove <índice>   Remove um item pelo índice
+                    Ex: node cli.js remove 0
+
+  help              Mostra esta ajuda
+                    Ex: node cli.js help
+`);
+  process.exit(0);
+}
+
+console.error("Comando desconhecido. Use 'add', 'list', 'update', 'help' ou 'remove'.");
 process.exit(1);
